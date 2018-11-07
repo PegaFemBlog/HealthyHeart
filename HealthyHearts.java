@@ -3,30 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sg.healthyhearts;
+package com.mycompany.healthyhearts;
 
 import java.util.Scanner;
 
 /**
  *
- * @author apprentice
+ * @author bacag
  */
 public class HealthyHearts {
+
     public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int age;
+
+        System.out.println("What is your age? ");
+        age = sc.nextInt();
+        int maxHR = 220 - age;
+        double minTarget = Math.round(maxHR * 0.5);
+        double maxTarget = Math.round(maxHR * .85);
+        int mnTarget = (int)minTarget;
+        int mxTarget = (int)maxTarget;
         
-       Scanner inputReader = new Scanner(System.in);
-       
-       int age;
-       int bpm;
-       
-        System.out.print("What is your age? ");
-        age = inputReader.nextInt();
-        
-        System.out.println("Your maximum heart rate should be " + (220 - age)+" beats per minute.");
-        bpm = 220 - age;
-        System.out.println("Your target HR Zone is " + bpm *.5 +" - "+ bpm *.85 +" beats per minute.");
-        
-       
+        System.out.println("Your maximum heart rate shoud be " + maxHR + " beats per minute.");
+        System.out.println("Your target HR Zone is " + mnTarget + " - " + mxTarget + " beats per minute.");
+
     }
-    
 }
